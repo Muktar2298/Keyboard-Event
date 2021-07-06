@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trigger Enter Key</title>
+    <style>
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-weight: bold;
+            background-color: pink;
+            border: none;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <p id="text">Welcome to World!</p>
+    <input type="text" name="" id="search-input" placeholder="Search...">
+    <button id="btn-search" onclick="searchBtn()">Search</button> <br>
+    <!-- <button id="btn-search" >Search</button>  -->
+
+
+
+
+
+    <script>
+        // --add Keyboard Event --//
+        const input = document.getElementById("search-input");
+        input.addEventListener("keypress", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("btn-search").click();
+            }
+        })
+
+
+        function searchBtn() {
+            const inputTxt = document.getElementById("search-input").value;
+            document.getElementById("text").innerText = inputTxt;
+        }
+
+
+        // document.getElementById("btn-search").addEventListener("click",function(event) {
+        //     alert("Welcome to JavaScript World!");
+        // })
+
+
+
+
+
+
+        // --add keyboard event --//
+    </script>
 </body>
+
 </html>
